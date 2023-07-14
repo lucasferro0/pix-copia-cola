@@ -4,7 +4,8 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Lucasferro0\\PixCopiaCola\\": "src/"
+            "Lucasferro0\\PixCopiaCola\\": "src/",
+            "Piggly\\Pix\\": "src/piggly"
         }
     },
     "authors": [
@@ -13,8 +14,8 @@
         }
     ],
     "require": {
-        "piggly/php-pix": "^2.0",
         "webmozart/assert": "^1.11",
-        "illuminate/http": "^8.83"
+        "illuminate/http": "^8.83",
+        "chillerlan/php-qrcode": "^4.3"
     }
 }
