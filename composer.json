@@ -1,0 +1,20 @@
+{
+    "name": "lucasferro0/pix-copia-cola",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Lucasferro0\\PixCopiaCola\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Lucas Ferro"
+        }
+    ],
+    "require": {
+        "piggly/php-pix": "^2.0",
+        "webmozart/assert": "^1.11",
+        "illuminate/http": "^8.83"
+    }
+}
