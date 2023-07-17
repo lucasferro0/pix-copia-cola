@@ -23,7 +23,6 @@ require 'vendor/autoload.php'
 
 use App\Package\PixCopiaCola\PixCopiaColaManager;
 
-
 // Exemplo para decodificar um copia e cola
 
 $copiaColaDecoded = (PixCopiaColaManager())->decode('copia_cola_aqui');
