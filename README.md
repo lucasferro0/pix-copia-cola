@@ -39,5 +39,4 @@ $descricao = $copiaColaDecoded->descricao;
 $identificador = $copiaColaDecode->identificador;
 
 $nomeBeneficiario = $copiaColaDecoded->nomeBeneficiario;
-
 ```
