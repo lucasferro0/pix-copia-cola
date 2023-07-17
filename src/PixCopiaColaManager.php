@@ -7,8 +7,9 @@ use Piggly\Pix\Reader;
 use Webmozart\Assert\Assert;
 use Piggly\Pix\StaticPayload;
 use Illuminate\Support\Facades\Http;
+use chillerlan\QRCode\QRCode;
 
-class PixCopiaColaParser
+class PixCopiaColaManager
 {
     private CopiaColaDecoded $copiaColaDecoded;
 
@@ -93,5 +94,10 @@ class PixCopiaColaParser
 
 
         return $payload->getPixCode();
+    }
+
+    public function generateQrcodeInBase64WithData(string $copiaCola): string
+    {
+        return (new QRCode())->render($copiaCola);
     }
 }

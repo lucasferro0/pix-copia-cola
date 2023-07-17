@@ -116,30 +116,6 @@ abstract class AbstractPayload
 	 */
 	public function getPixCode ( bool $regenerate = false ) : string
 	{ return $this->mpm->export($regenerate); }
-	
-	/**
-	 * Return the qr code based in current pix code.
-	 * The qr code format is a base64 image/png.
-	 * 
-	 * @param string $imageType Type of output image.
-	 * @param string $ecc QrCode ECC.
-	 * @since 2.0.0
-	 * @return string
-	 * @throws Exception When something went wrong.
-	 * @throws QRCodeNotSupported QR Code is not supported.
-	 */
-	public function getQRCode ( string $imageType = QrCodeEnum::OUTPUT_SVG, int $ecc = QrCodeEnum::ECC_M ) : string
-	{ 
-		if ( !self::supportQrCode() )
-		{ throw new QRCodeNotSupported(); }
-
-		$options = new QROptions([
-			'outputLevel' => $ecc,
-			'outputType' => $imageType
-		]);
-
-		return (new QRCode($options))->render($this->getPixCode()); 
-	}
 
 	/**
 	 * Get the EMV MPM object.

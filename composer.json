@@ -1,13 +1,16 @@
 {
     "name": "lucasferro0/pix-copia-cola",
-    "description": "Lib para gerar código copia e cola e para decodificar códico copia e cola",
+    "description": "Lib para gerar código copia e cola e para decodificar código copia e cola",
     "type": "library",
     "license": "MIT",
     "autoload": {
         "psr-4": {
             "Lucasferro0\\PixCopiaCola\\": "src/",
             "Piggly\\Pix\\": "src/piggly"
-        }
+        },
+        "files": [
+            "src/helpers.php"
+        ]
     },
     "authors": [
         {
@@ -17,6 +20,7 @@
     "require": {
         "webmozart/assert": "^1.11",
         "illuminate/http": "^8.83",
-        "chillerlan/php-qrcode": "^4.3"
+        "chillerlan/php-qrcode": "^4.3",
+        "ralouphie/mimey": "^2.1"
     }
 }
