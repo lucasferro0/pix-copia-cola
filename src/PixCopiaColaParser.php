@@ -2,11 +2,13 @@
 
 namespace App\Package\PixCopiaCola;
 
+use Throwable;
 use Piggly\Pix\Parser;
 use Piggly\Pix\Reader;
 use Webmozart\Assert\Assert;
 use Piggly\Pix\StaticPayload;
 use Illuminate\Support\Facades\Http;
+use Webmozart\Assert\InvalidArgumentException;
 
 class PixCopiaColaParser
 {
@@ -33,7 +35,15 @@ class PixCopiaColaParser
 
             Assert::notNull($url, 'Copia e cola inválido.');
 
-            $response = Http::get($url);
+            $handledUrl = ! str_contains($url, 'https://') ? 'https://' . $url : $url;
+
+            try {
+                $response = Http::get($handledUrl);
+            } catch (Throwable $e) {
+                throw new InvalidArgumentException(
+                    'Copia e cola inválido. Gere um novo copia e cola.'
+                );
+            }
 
             Assert::true($response->successful(), 'Copia e cola inválido.');
 
