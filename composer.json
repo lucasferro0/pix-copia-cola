@@ -1,5 +1,6 @@
 {
     "name": "lucasferro0/pix-copia-cola",
+    "description": "Lib para gerar código copia e cola e para decodificar códico copia e cola",
     "type": "library",
     "license": "MIT",
     "autoload": {
